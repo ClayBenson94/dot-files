@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls -l'
+alias l='ll'
 alias ..='cd ..'
 alias sshfs='sshfs -o cache=yes,compression=yes,large_read,kernel_cache'
 

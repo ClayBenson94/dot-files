@@ -1,6 +1,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	autocrlf = true
 [help]
 	autocorrect = 1
 [color]
@@ -9,8 +10,10 @@
 	default = simple
 [alias]
 	a = add
+	aa = add --all
 	s = status -suall
 	c = commit
+	cm = commit -m
 	st = stash -u
 	sa = stash apply
 	l = !. ~/.githelpers && vgl
