@@ -55,7 +55,6 @@ read -p "Enter your email for GIT (enter to skip): " gitemail
 
 if [[ ! -z "${gitname// }" ]]
 then
-	echo "HERE WE GO"
 	git config --global user.name "$gitname"
 fi
 if [[ ! -z "${gitemail// }" ]]
