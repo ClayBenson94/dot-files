@@ -53,20 +53,10 @@ which aws &>/dev/null && complete -C aws_completer aws
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share"
 
 # aliases, color, and optimizations
-if [ $(uname) = "Darwin" ]
+if [ -f ~/.bash_aliases ]
 then
-	alias ls='ls -FGA'
-	chflags nohidden "$HOME/Library"
-else
-	alias ls='ls -vhFA --color=auto'
-	alias lue='find . -type f | perl -ne "print \$1 if m/\.([^.\/]+)$/" | sort -u'
+	. ~/.bash_aliases
 fi
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias ll='ls -l'
-alias ..='cd ..'
-alias sshfs='sshfs -o cache=yes,compression=yes,large_read,kernel_cache'
 
 # pretty man pages
 man() {

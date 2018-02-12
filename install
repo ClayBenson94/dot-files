@@ -8,7 +8,7 @@ elif which git &>/dev/null
 then
 	git clone https://github.com/cdelorme/dot-files /tmp/dot-files
 else
-	dotfiles=(".bash_logout" ".bash_profile" ".bashrc" ".gitconfig" ".githelpers" ".gitignore" ".promptrc" ".ssh/config" ".tmux.conf" ".vimrc")
+	dotfiles=(".bash_aliases" ".bash_logout" ".bash_profile" ".bashrc" ".gitconfig" ".githelpers" ".gitignore" ".promptrc" ".ssh/config" ".tmux.conf" ".vimrc")
 
 	# prepare temporary directory (and ssh folder)
 	mkdir -p /tmp/dot-files/src/.ssh
@@ -25,7 +25,7 @@ else
 	# download each explicitly
 	for f in ${dotfiles[*]}
 	do
-		$dlcmd "/tmp/dot-files/src/${f}" "https://raw.githubusercontent.com/cdelorme/dot-files/master/src/${f}"
+		$dlcmd "/tmp/dot-files/src/${f}" "https://raw.githubusercontent.com/cbenson/dot-files/master/src/${f}"
 	done
 fi
 
