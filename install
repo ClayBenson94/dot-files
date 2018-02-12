@@ -50,4 +50,17 @@ then
 	[ $(id -u) -eq 0 ] && [ -d /etc/skel ] && find /tmp/dot-files/src -mindepth 1 -maxdepth 1 -exec cp -R {} /etc/skel/ \;
 fi
 
+read -p "Enter your name for GIT (enter to skip): " gitname
+read -p "Enter your email for GIT (enter to skip): " gitemail
+
+if [[ ! -z "${gitname// }" ]]
+then
+	echo "HERE WE GO"
+	git config --global user.name "$gitname"
+fi
+if [[ ! -z "${gitemail// }" ]]
+then
+	git config --global user.email "$gitemail"
+fi
+
 exit 0
