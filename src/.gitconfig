@@ -19,3 +19,5 @@
 	sa = stash apply
 	l = !. ~/.githelpers && vgl
 	pp = !git pull && git push
+	hh = reset --hard HEAD
+	aacm = !git aa && git cm
