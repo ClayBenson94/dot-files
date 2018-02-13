@@ -1,7 +1,8 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-	autocrlf = true
+	autocrlf = input
+	eol = lf
 [help]
 	autocorrect = 1
 [color]
