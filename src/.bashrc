@@ -1,5 +1,8 @@
 # .bashrc for interactive shells post login
 
+# Fix for WSL not starting in the home directory
+cd ~
+
 # don't continue if not interactive
 [ -z "$PS1" ] && return
 
