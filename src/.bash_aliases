@@ -33,6 +33,9 @@ alias hubdev="ssh -A admin@bastion.dev.integration.elluciancloud.com"
 
 alias setaws="source /usr/bin/setaws"
 alias pg="psql -p 5432 -h localhost -U postgres"
+resetdb() {
+	pg -c "DROP DATABASE $1" && pg -c "CREATE DATABASE $1";
+}
 alias ms="mysql -u root -p mysql"
 alias b="npm run build"
 alias s="npm run start"
