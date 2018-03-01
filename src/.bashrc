@@ -1,7 +1,8 @@
 # .bashrc for interactive shells post login
 
 # Fix for WSL not starting in the home directory
-cd ~
+# Commented out because it was breaking VSCode's "useWSL"
+# cd ~
 
 # don't continue if not interactive
 [ -z "$PS1" ] && return
