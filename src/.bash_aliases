@@ -36,7 +36,7 @@ alias pg="psql -p 5432 -h localhost -U postgres"
 resetdb() {
 	pg -c "DROP DATABASE $1" && pg -c "CREATE DATABASE $1";
 }
-alias ms="mysql -u root -p mysql"
+alias ms="mysql -u root --host 127.0.0.1 -p"
 alias b="npm run build"
 alias s="npm run start"
 alias t="npm run test"
