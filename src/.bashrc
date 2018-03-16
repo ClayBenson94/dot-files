@@ -7,6 +7,9 @@
 # don't continue if not interactive
 [ -z "$PS1" ] && return
 
+# Go into home directory
+cd ~
+
 # set our editor
 export EDITOR=vim
 
