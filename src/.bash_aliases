@@ -45,6 +45,9 @@ alias tw="npm run test-watch"
 alias ng="sudo service nginx start"
 
 #Git aliases
+prunelocal() {
+	git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+}
 alias clay="git checkout clay-dev"
 alias master="git checkout master"
 alias development="git checkout development"
