@@ -14,6 +14,9 @@ set foldmethod=syntax foldlevelstart=20
 set nobackup noswapfile
 :silent! set undodir=$HOME/.vim/undo undolevels=1000 undoreload=10000 undofile
 
+" set tabs to spaces
+set tabstop=4
+
 " set color scheme
 set background=dark
 :silent! colorscheme vividchalk
