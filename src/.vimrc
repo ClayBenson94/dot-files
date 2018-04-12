@@ -16,6 +16,7 @@ set nobackup noswapfile
 
 " set tabs to spaces
 set tabstop=4
+set expandtab
 
 " set color scheme
 set background=dark
