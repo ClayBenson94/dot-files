@@ -60,3 +60,6 @@ alias tb="nc termbin.com 9999"
 
 #Pi
 alias pi="ssh admin@10.4.101.97"
+
+#XRandr Setup for Debian VM Multi Monitors
+alias xr="xrandr --auto --output VGA-0 --left-of VGA-1"
