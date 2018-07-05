@@ -63,3 +63,9 @@ alias pi="ssh admin@10.4.101.97"
 
 #XRandr Setup for Debian VM Multi Monitors
 alias xr="xrandr --auto --output VGA-0 --left-of VGA-1"
+
+# setup sts wrapper and load existing aws credentials
+sts() {
+    $GOPATH/bin/sts $@ && . $GOPATH/bin/setaws
+}
+[ -f $GOPATH/bin/setaws ] && . $GOPATH/bin/setaws
