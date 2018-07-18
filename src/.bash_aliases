@@ -62,7 +62,8 @@ alias tb="nc termbin.com 9999"
 alias pi="ssh admin@10.4.101.97"
 
 #XRandr Setup for Debian VM Multi Monitors
-alias xr="xrandr --auto --output VGA-0 --left-of VGA-1"
+alias extend="xrandr --auto --output VGA-0 --left-of VGA-1"
+alias mirror="xrandr --auto --output VGA-0 --same-as VGA-1"
 
 # setup sts wrapper and load existing aws credentials
 sts() {
