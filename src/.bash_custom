@@ -1,0 +1,42 @@
+# Aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -l'
+alias l='ll'
+alias lal='ls -al'
+alias ..='cd ..'
+alias sshfs='sshfs -o cache=yes,compression=yes,large_read,kernel_cache'
+alias c="clear && printf '\033[3J'"
+alias die="killall -9"
+alias pg="psql -p 5432 -h localhost -U postgres"
+alias tb="nc termbin.com 9999"
+# node aliases
+alias nmnm="rm -rf ./node_modules"
+alias b="npm run build"
+alias s="npm run start"
+alias t="npm run test"
+alias d="npm run demo"
+# xrandr aliases
+alias extend="xrandr --auto --output VGA-0 --left-of VGA-1"
+alias mirror="xrandr --auto --output VGA-0 --same-as VGA-1"
+
+# Functions
+prunelocal() {
+	git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+}
+resetdb() {
+	pg -c "DROP DATABASE $1" && pg -c "CREATE DATABASE $1";
+}
+sts() {
+    $GOPATH/bin/sts $@ && . $GOPATH/bin/setaws
+}
+[ -f $GOPATH/bin/setaws ] && . $GOPATH/bin/setaws
+
+# load ssh keys on first-run (will prompt for passwords)
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+	eval `ssh-agent -s`
+	ssh-add
+fi
+
+[ -f ~/.promptrc ] && . ~/.promptrc
