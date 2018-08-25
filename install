@@ -17,6 +17,7 @@ fi
 if [ "$agree" = "y" ]
 then
 	cp -aR ./src/. ~/
+	chmod 644 ~/.ssh/config
 fi
 
 read -p "Enter your name for GIT (enter to skip): " gitname
