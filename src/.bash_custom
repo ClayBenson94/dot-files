@@ -32,6 +32,7 @@ sts() {
     $GOPATH/bin/sts $@ && . $GOPATH/bin/setaws
 }
 [ -f $GOPATH/bin/setaws ] && . $GOPATH/bin/setaws
+[ -d /usr/local/go/bin ] && export PATH=$PATH:/usr/local/go/bin
 
 # load ssh keys on first-run (will prompt for passwords)
 if [ -z "$SSH_AUTH_SOCK" ] ; then
