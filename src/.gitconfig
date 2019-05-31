@@ -17,7 +17,7 @@
 	cm = commit -m
 	st = stash -u
 	sa = stash apply
-	l = !. ~/.githelpers && vgl
+	l = !git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	pp = !git pull && git push
 	hh = reset --hard HEAD
 	aacm = !git aa && git cm
