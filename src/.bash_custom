@@ -16,10 +16,8 @@ alias nmnm="rm -rf ./node_modules"
 alias b="npm run build"
 alias s="npm run start"
 alias t="npm run test"
-alias d="npm run demo"
-# xrandr aliases
-alias extend="xrandr --auto --output VGA-1 --left-of VGA-2"
-alias mirror="xrandr --auto --output VGA-1 --same-as VGA-2"
+# docker aliases
+alias rmdangle='docker rmi $(docker images -f "dangling=true" -q)'
 
 # Functions
 prunelocal() {
