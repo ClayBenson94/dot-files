@@ -1,6 +1,6 @@
 # Aliases
 alias grep='grep --color=auto'
-alias l='ls -alh'
+alias l='ls -alhG'
 alias ..='cd ..'
 alias c="clear && printf '\033[3J'"
 alias die="killall -9"
