@@ -14,7 +14,7 @@ alias s="npm run start"
 alias t="npm run test"
 # docker aliases
 
-alias rmdangle='docker rmi $(docker images -f "dangling=true" -q)'
+alias rmdangle='docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 
 # Functions
 prunelocal() {
