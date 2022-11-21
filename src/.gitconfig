@@ -9,6 +9,7 @@
 	ui = true
 [push]
 	default = current
+	autoSetupRemote = true
 [alias]
 	a = add
 	aa = add --all
