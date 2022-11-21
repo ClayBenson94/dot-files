@@ -4,28 +4,22 @@ alias l='ls -alhG'
 alias ..='cd ..'
 alias c="clear && printf '\033[3J'"
 alias die="killall -9"
-alias pg="psql -p 5432 -h localhost -U postgres"
-alias tb="nc termbin.com 9999"
 
 # node aliases
 alias nmnm="rm -rf ./node_modules"
 alias b="npm run build"
 alias s="npm run start"
 alias t="npm run test"
-# docker aliases
 
+# docker aliases
 alias rmdangle='docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 
 # Functions
 prunelocal() {
 	git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
 }
-resetdb() {
-	pg -c "DROP DATABASE $1" && pg -c "CREATE DATABASE $1";
-}
-sts() {
-    $GOPATH/bin/sts $@ && . $GOPATH/bin/setaws
-}
+
+# Go env
 [ -f $GOPATH/bin/setaws ] && . $GOPATH/bin/setaws
 [ -d /usr/local/go/bin ] && export PATH=$PATH:/usr/local/go/bin
 
