@@ -22,3 +22,4 @@
 	pp = !git pull && git push
 	hh = reset --hard HEAD
 	aacm = !git aa && git cm
+	sf = "!f() { git switch $(git branch --list | grep -i \"$1\" | head -n1 | sed 's/^[ *]*//'); }; f"
