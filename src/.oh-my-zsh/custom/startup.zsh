@@ -1,24 +1,3 @@
-# Aliases
-alias grep='grep --color=auto'
-alias l='ls -alhG'
-alias ..='cd ..'
-alias c="clear && printf '\033[3J'"
-alias die="killall -9"
-
-# node aliases
-alias nmnm="rm -rf ./node_modules"
-alias b="npm run build"
-alias s="npm run start"
-alias t="npm run test"
-
-# docker aliases
-alias rmdangle='docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
-
-# Functions
-prunelocal() {
-	git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
-}
-
 # Go env
 [ -f $GOPATH/bin/setaws ] && . $GOPATH/bin/setaws
 [ -d /usr/local/go/bin ] && export PATH=$PATH:/usr/local/go/bin
@@ -44,5 +23,3 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent
 fi
-
-[ -f ~/.promptrc ] && . ~/.promptrc
